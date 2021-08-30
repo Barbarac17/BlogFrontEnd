@@ -38,22 +38,25 @@ public class Usuario {
 	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
 	private String senha;
 	
-	@Column(name = "dt_nascimento")
+	private String foto;
+	
+	/*@Column(name = "dt_nascimento")
 	@JsonFormat(pattern="yyyy-MM-dd")
     @NotNull
-	private LocalDate dataNascimento;
+	private LocalDate dataNascimento;*/
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
 	
-	public Usuario(long id, String nome, String usuario, String senha, LocalDate dataNascimento) {
+	public Usuario(long id, String nome, String usuario, String senha,String foto) {
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
-		this.dataNascimento = dataNascimento;
+		this.foto = foto;
+		/*this.dataNascimento = dataNascimento;*/
 	}
 
 	public Usuario() {	}
@@ -90,13 +93,13 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
-	public LocalDate getDataNascimento() {
+	/*public LocalDate getDataNascimento() {
 		return this.dataNascimento;
 	}
 
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
+	}*/
 
 	public List<Postagem> getPostagem() {
 		return postagem;
@@ -105,5 +108,15 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
+	
 
 }
