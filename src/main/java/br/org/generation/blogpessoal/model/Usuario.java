@@ -30,7 +30,7 @@ public class Usuario {
 	@NotNull(message = "O Nome é Obrigatório!")
 	private String nome;
 
-	@ApiModelProperty(example = "email@email.com.br")
+	/*@ApiModelProperty(example = "email@email.com.br")*/
 	@NotNull(message = "O Usuário é Obrigatório!")
 	private String usuario;
 
